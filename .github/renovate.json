@@ -1,0 +1,19 @@
+{
+  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
+  "assignees": ["hobroker"],
+  "rangeStrategy": "bump",
+  "platformAutomerge": false,
+  "separateMinorPatch": false,
+  "separateMajorMinor": false,
+  "separateMultipleMajor": false,
+  "packageRules": [
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "Deployments"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    }
+  ]
+}
