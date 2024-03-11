@@ -1,6 +1,8 @@
 FROM alpine:3.19.1
 LABEL maintainer="hobroker"
 
+ENV AWS_S3_BUCKET_DIR=""
+
 WORKDIR /app
 
 COPY src/setup.sh src/setup.sh

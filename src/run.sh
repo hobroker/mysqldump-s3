@@ -13,6 +13,7 @@ EOL
 
 echo "> running backup"
 FILENAME=$(date +"%Y-%m-%d_%H-%M-%S").sql
-mysqldump --no-tablespaces -h "${DATABASE_HOST}" -u "${DATABASE_USER}" -p"${DATABASE_PASSWORD}" "${DATABASE_NAME}" | aws s3 cp - s3://"${AWS_S3_BUCKET}"/"${FILENAME}"
+mysqldump --no-tablespaces -h "${DATABASE_HOST}" -u "${DATABASE_USER}" -p"${DATABASE_PASSWORD}" "${DATABASE_NAME}" \
+  | aws s3 cp - s3://"${AWS_S3_BUCKET}"/"${AWS_S3_BUCKET_DIR}""${FILENAME}"
 
 echo "> backup finished"
