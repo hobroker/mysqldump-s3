@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
@@ -44,7 +44,7 @@ jobs:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ needs.semantic-release.outputs.new_release_git_tag }}
 
@@ -68,7 +68,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6.17.0
+        uses: docker/build-push-action@v6.18.0
         with:
           context: .
           push: true
