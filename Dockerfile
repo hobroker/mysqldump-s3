@@ -1,4 +1,4 @@
-FROM alpine:3.22.2
+FROM alpine:3.24.1
 LABEL maintainer="hobroker"
 
 ENV AWS_S3_BUCKET_DIR=""
